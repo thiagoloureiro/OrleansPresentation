@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloGrain", "HelloGrain\He
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrleansClient", "OrleansClient\OrleansClient.csproj", "{3DA471CF-7AA4-4350-BE71-E3D3D920D491}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIOrleansClient", "APIOrleansClient\APIOrleansClient.csproj", "{EBC07A91-241D-4D0A-8218-FE7BB85036B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3DA471CF-7AA4-4350-BE71-E3D3D920D491}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DA471CF-7AA4-4350-BE71-E3D3D920D491}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DA471CF-7AA4-4350-BE71-E3D3D920D491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBC07A91-241D-4D0A-8218-FE7BB85036B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBC07A91-241D-4D0A-8218-FE7BB85036B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBC07A91-241D-4D0A-8218-FE7BB85036B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBC07A91-241D-4D0A-8218-FE7BB85036B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

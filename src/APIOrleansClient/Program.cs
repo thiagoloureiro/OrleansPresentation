@@ -1,42 +1,29 @@
 ﻿using IHelloGrain;
+using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
 using Orleans;
 using Orleans.Configuration;
+using Orleans.Hosting;
 using Orleans.Runtime;
 using System;
 using System.Threading.Tasks;
-using Orleans.Hosting;
 
-namespace OrleansClient
+namespace APIOrleansClient
 {
-    class Program
+    public class Program
     {
-        static int Main(string[] args)
+        public static IClusterClient _client { get; set; }
+
+
+        public static void Main(string[] args)
         {
-            return RunMainAsync().Result;
+            _client = Program.StartClientWithRetries().Result;
+
+            BuildWebHost(args).Run();
         }
 
-        private static async Task<int> RunMainAsync()
-        {
-            try
-            {
-                using (var client = await StartClientWithRetries())
-                {
-                    await DoClientWork(client);
-                    Console.ReadKey();
-                }
-
-                return 0;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                Console.ReadKey();
-                return 1;
-            }
-        }
-
-        private static async Task<IClusterClient> StartClientWithRetries(int initializeAttemptsBeforeFailing = 5)
+        public static async Task<IClusterClient> StartClientWithRetries(int initializeAttemptsBeforeFailing = 5)
         {
             var connectionString = "Data Source=localhost;Initial Catalog=Orleans;User Id=orleans; Password=password;Pooling=False;Max Pool Size=200;MultipleActiveResultSets=True";
 
@@ -82,12 +69,9 @@ namespace OrleansClient
             return client;
         }
 
-        private static async Task DoClientWork(IClusterClient client)
-        {
-            // example of calling grains from the initialized client
-            var friend = client.GetGrain<IHello>(0);
-            var response = await friend.SayHello("Good morning, my friend!");
-            Console.WriteLine("\n\n{0}\n\n", response);
-        }
+        public static IWebHost BuildWebHost(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>()
+                .Build();
     }
 }

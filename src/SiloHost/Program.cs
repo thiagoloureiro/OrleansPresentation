@@ -40,7 +40,7 @@ namespace ConsoleApp2
             int Port = rnd.Next(20000, 30000);
             var ip = GetIPAddresses();
             // var connectionString = "Data Source=172.17.0.3,1444;Initial Catalog=Orleans;Integrated Security=True;Pooling=False;Max Pool Size=200;MultipleActiveResultSets=True";
-            var connectionString = "Data Source=192.168.0.2;Initial Catalog=Orleans;User Id=orleans; Password=password;Pooling=False;Max Pool Size=200;MultipleActiveResultSets=True";
+            var connectionString = "Data Source=localhost;Initial Catalog=Orleans;User Id=orleans; Password=password;Pooling=False;Max Pool Size=200;MultipleActiveResultSets=True";
             // define the cluster configuration
             var builder = new SiloHostBuilder()
                 //.UseLocalhostClustering()
