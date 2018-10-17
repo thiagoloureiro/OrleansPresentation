@@ -13,6 +13,7 @@ namespace APIOrleansClient.Controllers
         {
             var grain = Program._client.GetGrain<IHello>(0);
             var response = await grain.SayHello("Good morning, my friend!");
+
             return response;
         }
 
