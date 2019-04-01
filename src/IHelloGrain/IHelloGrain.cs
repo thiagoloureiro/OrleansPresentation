@@ -7,6 +7,5 @@ namespace IHelloGrain
         Task<string> SayHello(string greeting);
 
         Task<double> CalculaCotacao(double valor, double cotacao);
-
     }
 }
