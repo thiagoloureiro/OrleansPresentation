@@ -10,10 +10,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" />
-    <PackageReference Include="Microsoft.Orleans.Core" Version="2.3.0" />
-    <PackageReference Include="Microsoft.Orleans.OrleansSQLUtils" Version="2.3.0" />
+    <PackageReference Include="Microsoft.Orleans.Core" Version="2.4.1" />
+    <PackageReference Include="Microsoft.Orleans.OrleansSQLUtils" Version="2.4.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.6.1" />
   </ItemGroup>
 
   <ItemGroup>
